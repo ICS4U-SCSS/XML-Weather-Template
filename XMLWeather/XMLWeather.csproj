@@ -52,6 +52,7 @@
     <Compile Include="CurrentScreen.Designer.cs">
       <DependentUpon>CurrentScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Day.cs" />
     <Compile Include="ForecastScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
