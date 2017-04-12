@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.cityOutput = new System.Windows.Forms.Label();
-            this.windSpeedOutput = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.windOutput = new System.Windows.Forms.Label();
-            this.windLabel = new System.Windows.Forms.Label();
+            this.maxOutput = new System.Windows.Forms.Label();
+            this.maxLabel = new System.Windows.Forms.Label();
+            this.minOutput = new System.Windows.Forms.Label();
+            this.minLabel = new System.Windows.Forms.Label();
             this.currentOutput = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tempLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.forecastLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,45 +51,45 @@
             this.cityOutput.TabIndex = 22;
             this.cityOutput.Text = "City";
             // 
-            // windSpeedOutput
+            // maxOutput
             // 
-            this.windSpeedOutput.BackColor = System.Drawing.Color.White;
-            this.windSpeedOutput.Location = new System.Drawing.Point(176, 278);
-            this.windSpeedOutput.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.windSpeedOutput.Name = "windSpeedOutput";
-            this.windSpeedOutput.Size = new System.Drawing.Size(170, 20);
-            this.windSpeedOutput.TabIndex = 32;
+            this.maxOutput.BackColor = System.Drawing.Color.White;
+            this.maxOutput.Location = new System.Drawing.Point(176, 278);
+            this.maxOutput.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.maxOutput.Name = "maxOutput";
+            this.maxOutput.Size = new System.Drawing.Size(170, 20);
+            this.maxOutput.TabIndex = 32;
             // 
-            // label2
+            // maxLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(32, 278);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 20);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Wind Speed";
+            this.maxLabel.AutoSize = true;
+            this.maxLabel.ForeColor = System.Drawing.Color.White;
+            this.maxLabel.Location = new System.Drawing.Point(32, 278);
+            this.maxLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.maxLabel.Name = "maxLabel";
+            this.maxLabel.Size = new System.Drawing.Size(38, 20);
+            this.maxLabel.TabIndex = 31;
+            this.maxLabel.Text = "max";
             // 
-            // windOutput
+            // minOutput
             // 
-            this.windOutput.BackColor = System.Drawing.Color.White;
-            this.windOutput.Location = new System.Drawing.Point(176, 243);
-            this.windOutput.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.windOutput.Name = "windOutput";
-            this.windOutput.Size = new System.Drawing.Size(170, 20);
-            this.windOutput.TabIndex = 30;
+            this.minOutput.BackColor = System.Drawing.Color.White;
+            this.minOutput.Location = new System.Drawing.Point(176, 243);
+            this.minOutput.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.minOutput.Name = "minOutput";
+            this.minOutput.Size = new System.Drawing.Size(170, 20);
+            this.minOutput.TabIndex = 30;
             // 
-            // windLabel
+            // minLabel
             // 
-            this.windLabel.AutoSize = true;
-            this.windLabel.ForeColor = System.Drawing.Color.White;
-            this.windLabel.Location = new System.Drawing.Point(32, 243);
-            this.windLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.windLabel.Name = "windLabel";
-            this.windLabel.Size = new System.Drawing.Size(45, 20);
-            this.windLabel.TabIndex = 29;
-            this.windLabel.Text = "Wind";
+            this.minLabel.AutoSize = true;
+            this.minLabel.ForeColor = System.Drawing.Color.White;
+            this.minLabel.Location = new System.Drawing.Point(32, 243);
+            this.minLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.minLabel.Name = "minLabel";
+            this.minLabel.Size = new System.Drawing.Size(34, 20);
+            this.minLabel.TabIndex = 29;
+            this.minLabel.Text = "min";
             // 
             // currentOutput
             // 
@@ -101,16 +101,16 @@
             this.currentOutput.Size = new System.Drawing.Size(33, 20);
             this.currentOutput.TabIndex = 28;
             // 
-            // label1
+            // tempLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(32, 209);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 20);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Current Temperature";
+            this.tempLabel.AutoSize = true;
+            this.tempLabel.ForeColor = System.Drawing.Color.White;
+            this.tempLabel.Location = new System.Drawing.Point(32, 209);
+            this.tempLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tempLabel.Name = "tempLabel";
+            this.tempLabel.Size = new System.Drawing.Size(157, 20);
+            this.tempLabel.TabIndex = 26;
+            this.tempLabel.Text = "Current Temperature";
             // 
             // label3
             // 
@@ -157,12 +157,12 @@
             this.Controls.Add(this.forecastLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cityOutput);
-            this.Controls.Add(this.windSpeedOutput);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.windOutput);
-            this.Controls.Add(this.windLabel);
+            this.Controls.Add(this.maxOutput);
+            this.Controls.Add(this.maxLabel);
+            this.Controls.Add(this.minOutput);
+            this.Controls.Add(this.minLabel);
             this.Controls.Add(this.currentOutput);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tempLabel);
             this.Controls.Add(this.label5);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CurrentScreen";
@@ -174,12 +174,12 @@
 
         #endregion
         private System.Windows.Forms.Label cityOutput;
-        private System.Windows.Forms.Label windSpeedOutput;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label windOutput;
-        private System.Windows.Forms.Label windLabel;
+        private System.Windows.Forms.Label maxOutput;
+        private System.Windows.Forms.Label maxLabel;
+        private System.Windows.Forms.Label minOutput;
+        private System.Windows.Forms.Label minLabel;
         private System.Windows.Forms.Label currentOutput;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label tempLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label forecastLabel;
         private System.Windows.Forms.Label label5;

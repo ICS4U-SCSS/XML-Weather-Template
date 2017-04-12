@@ -14,13 +14,15 @@ namespace XMLWeather
     public partial class Form1 : Form
     {
         // TODO: create list to hold day objects
+        public static List<Day> days = new List<Day>();
+        Day d = new Day();
 
         public Form1()
         {
             InitializeComponent();
             GetData();
-            //ExtractCurrent();
-            //ExtractForecast();
+            ExtractCurrent();
+            ExtractForecast();
 
             // open weather screen for todays weather
             CurrentScreen cs = new CurrentScreen();
@@ -40,12 +42,69 @@ namespace XMLWeather
 
         private void ExtractCurrent()
         {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("WeatherData.xml");
+
+            XmlNode parent;
+            parent = doc.DocumentElement;
+
+            foreach (XmlNode child in parent.ChildNodes)
+            {
+                if (child.Name == "city")
+                {
+                    d.location = child.Attributes["name"].Value;
+                }
+
+                if (child.Name == "temperature")
+                {
+                    d.tempHigh = child.Attributes["max"].Value;
+                    d.tempLow = child.Attributes["min"].Value;
+                    d.currentTemp = child.Attributes["value"].Value;
+                }
+
+            }
+
+            days.Add(d);
 
         }
               
         private void ExtractForecast()
         {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("WeatherData7Day.xml");
 
+            XmlNode parent;
+            parent = doc.DocumentElement;
+
+            d = new Day();
+
+            foreach (XmlNode child in parent.ChildNodes)
+            {
+                if (child.Name == "forecast")
+                {
+                    foreach (XmlNode grandChild in child.ChildNodes)
+                    {
+                        foreach (XmlNode greatGrandChild in grandChild.ChildNodes)
+                        {
+                            d.date = grandChild.Attributes["day"].Value;
+
+                            if (greatGrandChild.Name == "temperature")
+                            {
+                                d.tempHigh = greatGrandChild.Attributes["max"].Value;
+                                d.tempLow = greatGrandChild.Attributes["min"].Value;
+                            }
+
+                            if (greatGrandChild.Name == "clouds")
+                            {
+                                d.condition = greatGrandChild.Attributes["value"].Value;
+                                days.Add(d);
+                                d = new Day();
+                            }
+                        }
+                    }
+                }
+            }
+            days.RemoveAt(1);
         }
     }
 }
